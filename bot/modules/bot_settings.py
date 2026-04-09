@@ -83,7 +83,9 @@ async def get_buttons(key=None, edit_type=None, edit_mode=False):
         buttons.data_button("Aria2c Settings", "botset aria")
         buttons.data_button("Sabnzbd Settings", "botset nzb")
         buttons.data_button("JDownloader Sync", "botset syncjd")
+        buttons.data_button("📌 Topic Lock", "botset botvar ALLOWED_TOPIC_ID")  ← ADD THIS
         buttons.data_button("Close", "botset close")
+
         msg = "Bot Settings:"
     elif edit_type is not None:
         if edit_type == "botvar":
