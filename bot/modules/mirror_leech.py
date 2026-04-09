@@ -440,7 +440,19 @@ class Mirror(TaskListener):
                 )
             await add_aria2_download(self, path, headers, ratio, seed_time)
 
-
+async def _check_topic(message) -> bool:
+    allowed = Config.ALLOWED_TOPIC_ID
+    if not allowed or allowed == 0:
+        return True
+    thread_id = message.message_thread_id
+    if thread_id is None or int(thread_id) != int(allowed):
+        await send_message(
+            message,
+            "⚠️ <b>Wrong Topic!</b>\nPlease use this command in the correct topic only."
+        )
+        return False
+    return True
+    
 async def mirror(client, message):
     bot_loop.create_task(Mirror(client, message).new_event())
 
@@ -478,3 +490,29 @@ async def nzb_leech(client, message):
     bot_loop.create_task(
         Mirror(client, message, is_leech=True, is_nzb=True).new_event()
     )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
