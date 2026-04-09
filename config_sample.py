@@ -100,7 +100,7 @@ LOGIN_PASS = ""
 BOT_PM = False
 SET_COMMANDS = True
 TIMEZONE = "Asia/Kolkata"
-ALLOWED_TOPIC_ID = 0
+
 
 
 # GDrive Tools
