@@ -118,7 +118,9 @@ class Config:
     USER_TRANSMISSION = True
     USE_SERVICE_ACCOUNTS = False
     WEB_PINCODE = True
+    ALLOWED_TOPIC_ID = 0      ← ADD THIS LINE
     YT_DLP_OPTIONS = {}
+
     YT_DESP = "Uploaded with WZML-X bot"
     YT_TAGS = ["telegram", "bot", "youtube"]
     YT_CATEGORY_ID = 22
